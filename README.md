@@ -5,14 +5,14 @@ Potentially useful Python scripts for file parsing or general purpose bioinforma
 
 seq.file.converter.py:
 
-Reads in fasta files and non-interleaved phylip and nexus files.
-Will output fasta, interleaved and non-interleaved phylip and nexus files.
+Reads in fasta files and non-interleaved phylip and nexus files.<br>
+Will output fasta, interleaved and non-interleaved phylip and nexus files.<br>
 
-Required arguments:
--i <infile>
--inf <file_type> FASTA, NEXUS or PHYLP (all caps, not misspelled).
--outf <file_type> FASTA, NEXUS or PHYLP (all caps, not misspelled).
+Required arguments:<br>
+-i < infile ><br>
+-inf < file_type > FASTA, NEXUS or PHYLP (all caps, not misspelled).<br>
+-outf < file_type > FASTA, NEXUS or PHYLP (all caps, not misspelled).<br>
 
-Optional arguments:
--prot if present will write protein to nexus file. Default: DNA
+Optional arguments:<br>
+-prot if present will write protein to nexus file. Default: DNA<br>
 -int if present will write interleaved nexus and phylip files. Default: sequential
