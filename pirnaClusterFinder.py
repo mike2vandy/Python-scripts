@@ -114,6 +114,7 @@ for chrm in data:
 		pi_count = 0
 		first_nucl = []
 		pis_in_window = []
+		rm = []
 		
 		for pi in data[chrm]:
 			start, first = int(pi[0]), pi[1]
@@ -124,7 +125,10 @@ for chrm in data:
 			elif start > win_end:
 				break
 			elif start < win_start:
-				data[chrm].remove(pi) #remove piRNA found in a previous window to save time
+				rm.append(pi) #remove piRNA found in a previous window to save time
+		
+		for pi in rm:
+			data[chrm].remove(pi)
 				
 		if len(first_nucl) > 0:
 			t_ratio = float(first_nucl.count('T')) / len(first_nucl)
@@ -143,10 +147,9 @@ for chrm in data:
 				if index not in merged_clusters:
 					merged_clusters[index] = []
 					merged_clusters[index] += wins[count][2]
-					count += 1
 				else:
 					merged_clusters[index] += wins[count][2]
-					count += 1
+				count += 1
 			else:
 				index_count += 1
 				count += 1
