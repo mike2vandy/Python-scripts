@@ -12,13 +12,14 @@ def fasDict(i_f):
       else:
         seqDict[header] += line
 
-  return seq_dict
+  return seDict
 
 #MAIN 
-small_seqs = fasDict(sys.argv[1], False)
+#Read fasta file from command line
+small_seqs = fasDict(sys.argv[1])
 
 for head, seq in small_seqs.items():
-  #create a compression score, higher scores == lower complexity 
+  #create a compression score for each small RNA, higher scores == lower complexity 
   score = float(len(zlib.compress(seq)))/len(seq)
   if score >= 0.75:
     print ">{}\n{}".format(head, seq)
